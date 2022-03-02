@@ -21,7 +21,7 @@
       <div class="mt-8 md:mt-0 flex items-center">
         @auth
           <span class="text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}!</span>
-          <form action="/logout" method="POST" class="text-sm font-semibold text-blue-500 ml-6">
+          <form action="/logout" method="POST" class="text-sm font-semibold text-purple-500 ml-6">
             @csrf
             <button type="submit">Log Out</button>
           </form>
@@ -41,7 +41,7 @@
   </section>
   @if (session()->has('success'))
     <div x-data="{show: true}" x-init="setTimeout(()=> show=false, 4000)"
-      class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm" x-show="show">
+      class="fixed bg-purple-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm" x-show="show">
       <p>{{ session('success') }}</p>
     </div>
   @endif
