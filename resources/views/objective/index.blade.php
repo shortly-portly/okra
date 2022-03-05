@@ -1,5 +1,5 @@
 <x-layout image="objective-list.svg">
-  <section class="px-6 py-8">
+  <section class="px-2 lg:px-6 lg:py-8">
     @if ($objectives->count())
       <div class="flex items-center justify-center">
         <div class="container">
