@@ -3,9 +3,9 @@
 <!doctype html>
 
 <title>Okra</title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="{{ asset('js/app.js') }}" defer></script>
 
 
@@ -21,7 +21,7 @@
       <div class="mt-8 md:mt-0 flex items-center">
         @auth
           <span class="text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}!</span>
-          <form action="/logout" method="POST" class="text-sm font-semibold text-purple-500 ml-6">
+          <form action="/logout" method="POST" class="text-sm font-semibold text-purple-900 ml-6">
             @csrf
             <button type="submit">Log Out</button>
           </form>

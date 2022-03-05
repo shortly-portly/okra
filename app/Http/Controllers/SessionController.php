@@ -30,7 +30,7 @@ class SessionController extends Controller
         // This will automatically return the Input so you don't have to.
 
         session()->regenerate();
-        return redirect('/')->with('success', 'Weclome Back');
+        return redirect('/objective')->with('success', 'Weclome Back');
     }
 
     public function destroy()

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class ObjectiveFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => $this->faker->sentence(),
+            'status'      => 'new',
+            'user_id'     => User::factory(),
+
         ];
     }
 }

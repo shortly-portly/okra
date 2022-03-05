@@ -6,5 +6,12 @@ use Illuminate\Http\Request;
 
 class ObjectiveController extends Controller
 {
-    //
+    public function index(Request $request)
+    {
+        $objectives = $request->user()->objectives;
+
+        return view('objective.index', [
+            'objectives' => $objectives,
+        ]);
+    }
 }
