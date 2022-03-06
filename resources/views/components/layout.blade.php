@@ -11,14 +11,17 @@
 
 <body style="font-family: Open Sans, sans-serif">
   <div class="flex flex-col h-screen">
-    <header class="px-6 py-8">
+    <header class="px-6 py-2 border-b-2 border-gray-300">
       <nav class="md:flex md:justify-between md:items-center">
         <div>
           <a href="/">
             <img src="/images/{{ $image }}" alt="Okra Logo" class="w-40 h-40">
           </a>
         </div>
-        <div class="text-2xl">Okra</div>
+        <div class="flex flex-col">
+          <div class="text-4xl text-center">Okra</div>
+          <div class="text-2xl text-gray-500 text-center">Objective List</div>
+        </div>
         <div class="mt-8 md:mt-0 flex items-center">
           @auth
             <span class="text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}!</span>

@@ -31,11 +31,11 @@
                     <td class="py-3 px-2 whitespace-nowrap hidden lg:py-2 lg:px-2 lg:table-cell">Thu 09 October 2022
                     </td>
                     <td class="lg:px-2 whitespace-nowrap">
-                      <span class=" text-indigo-500 hover:text-indigo-700">Show</span>
+                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">Show</span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
-                      <span class=" text-indigo-500 hover:text-indigo-700">Edit</span>
+                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">Edit</span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
-                      <span class=" text-indigo-500 hover:text-indigo-700">Delete</span>
+                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">Delete</span>
 
                     </td>
                   </tr>
@@ -54,31 +54,6 @@
 
 
 
-    <style>
-      html,
-      body {
-        height: 100%;
-      }
-
-      @media (min-width: 640px) {
-        table {
-          display: inline-table !important;
-        }
-
-        thead tr:not(:first-child) {
-          display: none;
-        }
-      }
-
-      td:not(:last-child) {
-        border-bottom: 0;
-      }
-
-      th:not(:last-child) {
-        border-bottom: 2px solid rgba(0, 0, 0, .1);
-      }
-
-    </style>
   </section>
 
 

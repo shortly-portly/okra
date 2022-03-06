@@ -5,7 +5,15 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'purpleish': '#6B63FF',
+        'pinkish': '#FF63A9',
+        'yellowish': '#F7FF63',
+        'greenish': '#63FFB9'
+
+      },
+    },
   },
   plugins: [],
 }
