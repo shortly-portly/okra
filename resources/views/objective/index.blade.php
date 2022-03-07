@@ -36,6 +36,7 @@
               </tbody>
             </table>
           </div>
+
         </div>
       </div>
     @else
@@ -43,6 +44,7 @@
         No objectives created yet.
       </p>
     @endif
+    {{ $objectives->links() }}
 
 
 
@@ -51,3 +53,5 @@
 
 
 </x-layout>
+
+{{ $objectives->links() }}

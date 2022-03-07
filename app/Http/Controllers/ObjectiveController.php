@@ -9,7 +9,7 @@ class ObjectiveController extends Controller
 {
     public function index(Request $request)
     {
-        $objectives = $request->user()->objectives;
+        $objectives = $request->user()->objectives()->paginate(5);
 
         return view('objective.index', [
             'objectives' => $objectives,
