@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('objectives', function (Blueprint $table) {
             $table->id();
             $table->text('description');
-            $table->enum('status', ['new', 'approved', 'ongoing', 'complete', 'cancelled']);
+            $table->enum('status', ['New', 'Approved', 'Ongoing', 'Complete', 'Cancelled']);
             $table->date('start_date');
             $table->date('end_date');
             $table->date('next_review_date');

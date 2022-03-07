@@ -1,4 +1,4 @@
-@props(['image'])
+@props(['image', 'title'])
 
 <!doctype html>
 
@@ -20,11 +20,11 @@
         </div>
         <div class="flex flex-col">
           <div class="text-4xl text-center">Okra</div>
-          <div class="text-2xl text-gray-500 text-center">Objective List</div>
+          <div class="text-2xl text-gray-500 text-center">{{ $title }}</div>
         </div>
         <div class="mt-8 md:mt-0 flex items-center">
           @auth
-            <span class="text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}!</span>
+            <span class="text-sm font-bold uppercase">Welcome {{ auth()->user()->name }}</span>
             <form action="/logout" method="POST" class="text-sm font-semibold text-purple-900 ml-6">
               @csrf
               <button type="submit">Log Out</button>

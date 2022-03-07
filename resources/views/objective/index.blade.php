@@ -1,4 +1,4 @@
-<x-layout image="objective-list.svg">
+<x-layout image="objective-list.svg" title="Objective List">
   <section class="px-2 lg:px-6 lg:py-8">
     @if ($objectives->count())
       <div class="flex items-center justify-center">
@@ -45,13 +45,5 @@
       </p>
     @endif
     {{ $objectives->links() }}
-
-
-
-
   </section>
-
-
 </x-layout>
-
-{{ $objectives->links() }}
