@@ -18,9 +18,12 @@ class ObjectiveFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->sentence(),
-            'status'      => 'new',
-            'user_id'     => User::factory(),
+            'description'      => $this->faker->sentence(),
+            'status'           => 'new',
+            'start_date'       => $this->faker->date(),
+            'end_date'         => $this->faker->date(),
+            'next_review_date' => $this->faker->date(),
+            'user_id'          => User::factory(),
 
         ];
     }

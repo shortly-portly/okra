@@ -1,0 +1,12 @@
+Objecive
+========
+* Status
+* Start Date
+* Next Review Date
+* End Date
+* Goal Status 
+* Details
+* Measures
+* Performance Improvement Goal?
+* Visibility
+* Goal Type: ['Performance Goal', 'Performance Improvement Goal', 'Personal Development Goal']

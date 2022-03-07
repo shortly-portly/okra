@@ -8,8 +8,9 @@
               <thead class="border-b-2 border-gray-400">
                 <x-table.primary-header>Description</x-table.primary-header>
                 <x-table.primary-header>Status</x-table.primary-header>
-                <x-table.secondary-header>Start Date</x-table.secondary-header>
-                <x-table.secondary-header>End Date</x-table.secondary-header>
+                <x-table.secondary-header>Start</x-table.secondary-header>
+                <x-table.secondary-header>End</x-table.secondary-header>
+                <x-table.secondary-header>Next Review </x-table.secondary-header>
                 <x-table.primary-header>Action</x-table.primary-header>
               </thead>
               <tbody>
@@ -17,11 +18,14 @@
                   <tr class="odd:bg-gray-100 border-b-2 border-gray-300 text-sm">
                     <x-table.primary-col>{{ $objective->description }}</x-table.primary-col>
                     <x-table.primary-col>{{ $objective->status }}</x-table.primary-col>
-                    <x-table.secondary-col>Tue 23 March 2022</x-table.secondary-col>
-                    <x-table.secondary-col>Thu 03 October 2022</x-table.secondary-col>
+                    <x-table.secondary-col>{{ $objective->start_date->format('d M Y') }}
+                    </x-table.secondary-col>
+                    <x-table.secondary-col>{{ $objective->end_date->format('d M y') }}</x-table.secondary-col>
+                    <x-table.secondary-col>{{ $objective->next_review_date->format('d M y') }}</x-table.secondary-col>
                     </td>
                     <x-table.primary-col>
-                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">Show</span>
+                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">
+                        <a href="objective/{{ $objective->id }}">Show</a></span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
                       <span class=" text-indigo-900 hover:text-pinkish hover:underline">Edit</span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
