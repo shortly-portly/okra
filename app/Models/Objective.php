@@ -13,7 +13,11 @@ class Objective extends Model
 
     protected $guarded = [];
 
-    protected $dates = ['start_date', 'end_date', 'next_review_date'];
+    protected $casts = [
+        'start_date'       => 'date',
+        'end_date'         => 'date',
+        'next_review_date' => 'date',
+    ];
 
     public function setStartDateAttribute($value)
     {
