@@ -20,9 +20,9 @@ class ObjectiveFactory extends Factory
         return [
             'description'      => $this->faker->sentence(),
             'status'           => 'new',
-            'start_date'       => $this->faker->date(),
-            'end_date'         => $this->faker->date(),
-            'next_review_date' => $this->faker->date(),
+            'start_date'       => $this->faker->date('d/m/Y'),
+            'end_date'         => $this->faker->date('d/m/Y'),
+            'next_review_date' => null,
             'user_id'          => User::factory(),
 
         ];

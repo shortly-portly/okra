@@ -29,5 +29,7 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest')->name('login');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
+Route::get('objective/create', [ObjectiveController::class, 'create'])->middleware('auth');
+Route::post('objective', [ObjectiveController::class, 'store'])->middleware('auth');
 Route::get('objective/{objective}', [ObjectiveController::class, 'show']);
 Route::get('objective', [ObjectiveController::class, 'index'])->middleware('auth');

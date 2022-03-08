@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('status', ['New', 'Approved', 'Ongoing', 'Complete', 'Cancelled']);
             $table->date('start_date');
             $table->date('end_date');
-            $table->date('next_review_date');
+            $table->date('next_review_date')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });

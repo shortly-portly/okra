@@ -21,7 +21,9 @@
                     <x-table.secondary-col>{{ $objective->start_date->format('d M Y') }}
                     </x-table.secondary-col>
                     <x-table.secondary-col>{{ $objective->end_date->format('d M y') }}</x-table.secondary-col>
-                    <x-table.secondary-col>{{ $objective->next_review_date->format('d M y') }}</x-table.secondary-col>
+                    <x-table.secondary-col>
+                      {{ $objective->next_review_date?->format('d M y') }}
+                    </x-table.secondary-col>
                     </td>
                     <x-table.primary-col>
                       <span class=" text-indigo-900 hover:text-pinkish hover:underline">
