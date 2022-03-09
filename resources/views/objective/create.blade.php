@@ -4,9 +4,9 @@
       <form method="POST" action="/objective" class="mt-10">
         @csrf
         <x-text-input name="description"></x-text-input>
-        <x-text-input name="start_date"></x-text-input>
-        <x-text-input name="end_date"></x-text-input>
-        <x-text-input name="next_review_date" optional></x-text-input>
+        <x-date-input name="start_date"></x-date-input>
+        <x-date-input name="end_date"></x-date-input>
+        <x-date-input name="next_review_date" optional></x-date-input>
         <x-button>Create Objective</x-button>
       </form>
     </main>

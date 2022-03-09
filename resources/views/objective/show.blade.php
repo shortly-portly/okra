@@ -13,7 +13,7 @@
           <span class="font-semibold">End Date:</span> {{ $objective->end_date->format('d M Y') }}
         </div>
         <div>
-          <span class="font-semibold">Next Review Date:</span> {{ $objective->next_review_date->format('d M Y') }}
+          <span class="font-semibold">Next Review Date:</span> {{ $objective->next_review_date?->format('d M Y') }}
         </div>
       </div>
       <div class="flex flex-col md:flex-row justify-around md:justify-between p-2">
