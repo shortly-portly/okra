@@ -35,8 +35,8 @@ class ObjectiveController extends Controller
         $attributes = request()->validate([
             'description'      => ['required', 'min:2', 'max:255'],
             'start_date'       => ['required', 'date_format:d/m/Y'],
-            'end_date'         => ['required', 'date_format:d/m/Y'],
-            'next_review_date' => ['nullable', 'date_format:d/m/Y'],
+            'end_date'         => ['required', 'date_format:d/m/Y', 'after:start_date'],
+            'next_review_date' => ['nullable', 'date_format:d/m/Y', 'after:start_date', 'before:end_date'],
         ]);
 
         $attributes['user_id'] = request()->user()->id;
