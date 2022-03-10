@@ -6,7 +6,7 @@
         @csrf
         <x-text-input name="email"></x-text-input>
         <x-password-input name="password"></x-password-input>
-        <x-button>Login In</x-button>
+        <x-submit-button>Login In</x-submit-button>
       </form>
     </main>
   </section>

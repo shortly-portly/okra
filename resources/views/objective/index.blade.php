@@ -1,10 +1,14 @@
 <x-layout image="objective-list.svg" title="Objective List">
   <section class="px-2 lg:px-6 lg:py-8">
+
+    <div class="flex justify-end">
+      <x-button to="/objective/create">New Objective</x-button>
+    </div>
     @if ($objectives->count())
       <div class="flex items-center justify-center">
         <div class="container">
           <div class="flex justify-center overflow-auto relative">
-            <table class="w-full  sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <table class="w-full  sm:bg-white rounded-lg overflow-hidden my-5">
               <thead class="border-b-2 border-gray-400">
                 <x-table.primary-header>Description</x-table.primary-header>
                 <x-table.primary-header>Status</x-table.primary-header>
@@ -38,7 +42,6 @@
               </tbody>
             </table>
           </div>
-
         </div>
       </div>
     @else
@@ -47,5 +50,6 @@
       </p>
     @endif
     {{ $objectives->links() }}
+
   </section>
 </x-layout>

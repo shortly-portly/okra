@@ -7,7 +7,10 @@
         <x-date-input name="start_date"></x-date-input>
         <x-date-input name="end_date"></x-date-input>
         <x-date-input name="next_review_date" optional></x-date-input>
-        <x-button>Create Objective</x-button>
+        <div class="flex justify-between">
+          <x-submit-button>Create Objective</x-submit-button>
+          <x-cancel-button to="/objective">Cancel</x-cancel-button>
+        </div>
       </form>
     </main>
   </section>

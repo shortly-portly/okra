@@ -18,25 +18,6 @@ class Objective extends Model
         'next_review_date' => 'date',
     ];
 
-    // public function setStartDateAttribute($value)
-    // {
-    //     $this->attributes['start_date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
-    // }
-
-    // public function setEndDateAttribute($value)
-    // {
-    //     $this->attributes['end_date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
-    // }
-
-    // public function setNextReviewDateAttribute($value)
-    // {
-    //     if ($value) {
-    //         $this->attributes['next_review_date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
-    //     } else {
-    //         $this->attributes['next_review_date'] = null;
-    //     }
-    // }
-
     public function user()
     {
         return $this->belongsTo(User::class);

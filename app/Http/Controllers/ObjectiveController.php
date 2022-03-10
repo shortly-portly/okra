@@ -10,7 +10,7 @@ class ObjectiveController extends Controller
 
     public function index(Request $request)
     {
-        $objectives = $request->user()->objectives()->paginate(5);
+        $objectives = $request->user()->objectives()->orderBy('created_at', 'DESC')->paginate(5);
 
         return view('objective.index', [
             'objectives' => $objectives,
@@ -40,6 +40,7 @@ class ObjectiveController extends Controller
         ]);
 
         $attributes['user_id'] = request()->user()->id;
+        $attributes['status']  = 'New';
 
         Objective::create($attributes);
 
