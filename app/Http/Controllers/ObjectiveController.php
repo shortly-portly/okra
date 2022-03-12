@@ -10,7 +10,11 @@ class ObjectiveController extends Controller
 
     public function index(Request $request)
     {
-        $objectives = $request->user()->objectives()->orderBy('created_at', 'DESC')->paginate(5);
+        $objectives = $request
+            ->user()
+            ->objectives()
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
 
         return view('objective.index', [
             'objectives' => $objectives,
@@ -43,6 +47,27 @@ class ObjectiveController extends Controller
         $attributes['status']  = 'New';
 
         Objective::create($attributes);
+
+        return redirect('/objective');
+    }
+
+    public function edit(Objective $objective)
+    {
+        return view('objective.edit', [
+            'objective' => $objective,
+        ]);
+    }
+
+    public function update(Objective $objective)
+    {
+        $attributes = request()->validate([
+            'description'      => ['required', 'min:2', 'max:255'],
+            'start_date'       => ['required', 'date'],
+            'end_date'         => ['required', 'date', 'after:start_date'],
+            'next_review_date' => ['nullable', 'date', 'after:start_date', 'before:end_date'],
+        ]);
+
+        $objective->update($attributes);
 
         return redirect('/objective');
     }

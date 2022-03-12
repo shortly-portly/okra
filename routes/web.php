@@ -32,4 +32,6 @@ Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')
 Route::get('objective/create', [ObjectiveController::class, 'create'])->middleware('auth');
 Route::post('objective', [ObjectiveController::class, 'store'])->middleware('auth');
 Route::get('objective/{objective}', [ObjectiveController::class, 'show']);
+Route::get('objective/{objective}/edit', [ObjectiveController::class, 'edit']);
+Route::put('objective/{objective}', [ObjectiveController::class, 'update']);
 Route::get('objective', [ObjectiveController::class, 'index'])->middleware('auth');

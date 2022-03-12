@@ -33,7 +33,9 @@
                       <span class=" text-indigo-900 hover:text-pinkish hover:underline">
                         <a href="objective/{{ $objective->id }}">Show</a></span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
-                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">Edit</span>
+                      <span class=" text-indigo-900 hover:text-pinkish hover:underline">
+                        <a href="objective/{{ $objective->id }}/edit">Edit</a>
+                      </span>
                       <span class="text-gray-300 hidden lg:inline">|</span>
                       <span class=" text-indigo-900 hover:text-pinkish hover:underline">Delete</span>
                     </x-table.primary-col>
