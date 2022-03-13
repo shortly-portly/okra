@@ -24,7 +24,7 @@
                     <x-table.primary-col>{{ $objective->status }}</x-table.primary-col>
                     <x-table.secondary-col>{{ $objective->start_date->format('d M Y') }}
                     </x-table.secondary-col>
-                    <x-table.secondary-col>{{ $objective->end_date->format('d M y') }}</x-table.secondary-col>
+                    <x-table.secondary-col>{{ $objective->end_date->format('d M Y') }}</x-table.secondary-col>
                     <x-table.secondary-col>
                       {{ $objective->next_review_date?->format('d M y') }}
                     </x-table.secondary-col>
