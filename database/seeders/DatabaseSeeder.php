@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Objective;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -14,8 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(50)
-            ->hasObjectives(30)
+        User::factory(5)
+            ->has(Objective::factory(10)->hasKeyResults(10))
             ->create();
     }
 }

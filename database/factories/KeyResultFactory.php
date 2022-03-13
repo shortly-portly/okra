@@ -17,7 +17,8 @@ class KeyResultFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => $this->faker->sentence(),
+            'status'      => 'new',
         ];
     }
 }

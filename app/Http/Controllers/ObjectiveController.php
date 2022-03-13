@@ -23,9 +23,8 @@ class ObjectiveController extends Controller
 
     public function show(Objective $objective)
     {
-
         return view('objective.show', [
-            'objective' => $objective,
+            'objective' => $objective->load('keyResults'),
         ]);
     }
 
