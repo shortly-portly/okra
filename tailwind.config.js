@@ -7,10 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'purpleish': '#6B63FF',
-        'pinkish': '#FF63A9',
-        'yellowish': '#F7FF63',
-        'greenish': '#63FFB9'
+        'primary': '#6B63FF',
+        'complement': '#ffb663',
+        'monochromatic': '#8c87e6',
+        'third': '#f7ff63',
+        'fourth': '#ff63f7'
 
       },
     },

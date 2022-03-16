@@ -1,4 +1,4 @@
-@props(['image', 'title'])
+@props(['image', 'title', 'subTitle' => null])
 
 <!doctype html>
 
@@ -21,6 +21,7 @@
         <div class="flex flex-col">
           <div class="text-4xl text-center">Okra</div>
           <div class="text-2xl text-gray-500 text-center">{{ $title }}</div>
+          <div class="text-2xl text-gray-500 text-center">{{ $subTitle }}</div>
         </div>
         <div class="mt-8 md:mt-0 flex items-center">
           @auth
@@ -36,6 +37,11 @@
 
         </div>
       </nav>
+      <div class="flex justify-start px-2 lg:px-6">
+        <div class='px-8'>
+          <a href="/objective" class="text-purpleish underline">Objectives</a>
+        </div>
+      </div>
     </header>
 
     <div class="grow">

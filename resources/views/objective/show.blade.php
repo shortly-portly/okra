@@ -30,28 +30,35 @@
         </div>
 
         <div class="text-center text-3xl mt-8">Key Results</div>
-
         <div class="text-2xl text-gray-500 text-center">How will I achieve this objective?</div>
+        <div class="flex justify-end">
+          <x-button to="/objective/{{ $objective->id }}/keyResult/create">New Key Result</x-button>
+        </div>
         <table class="w-full  sm:bg-white rounded-lg overflow-hidden my-5">
           <thead class="border-b-2 border-gray-400">
             <x-table.primary-header>Description</x-table.primary-header>
             <x-table.primary-header>Status</x-table.primary-header>
+            <x-table.secondary-header>Start</x-table.secondary-header>
+            <x-table.secondary-header>End</x-table.secondary-header>
             <x-table.primary-header>Action</x-table.primary-header>
+
           </thead>
           <tbody>
             @foreach ($objective->keyResults as $keyResult)
               <tr class="odd:bg-gray-100 border-b-2 border-gray-300 text-sm">
                 <x-table.primary-col>{{ $keyResult->description }}</x-table.primary-col>
                 <x-table.primary-col>{{ $keyResult->status }}</x-table.primary-col>
+                <x-table.secondary-col>{{ $keyResult->start_date }}</x-table.secondary-col>
+                <x-table.secondary-col>{{ $keyResult->end_date }}</x-table.secondary-col>
                 <x-table.primary-col>
-                  <span class=" text-indigo-900 hover:text-pinkish hover:underline">
-                    <a href="objective/{{ $objective->id }}">Show</a></span>
+                  <span class=" text-primary underline hover:text-complement ">
+                    <a href="/keyResult/{{ $keyResult->id }}">Show</a></span>
                   <span class="text-gray-300 hidden lg:inline">|</span>
-                  <span class=" text-indigo-900 hover:text-pinkish hover:underline">
+                  <span class=" text-primary hover:text-monochromatic underline">
                     <a href="objective/{{ $objective->id }}/edit">Edit</a>
                   </span>
                   <span class="text-gray-300 hidden lg:inline">|</span>
-                  <span class=" text-indigo-900 hover:text-pinkish hover:underline">Delete</span>
+                  <span class=" text-primary hover:text-monochromatic underline">Delete</span>
                 </x-table.primary-col>
               </tr>
             @endforeach
