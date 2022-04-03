@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ObjectiveRequest;
 use App\Models\Objective;
 use Illuminate\Http\Request;
 
@@ -33,19 +34,13 @@ class ObjectiveController extends Controller
         return view('objective.create');
     }
 
-    public function store()
+    public function store(ObjectiveRequest $request)
     {
-        $attributes = request()->validate([
-            'description'      => ['required', 'min:2', 'max:255'],
-            'start_date'       => ['required', 'date'],
-            'end_date'         => ['required', 'date', 'after:start_date'],
-            'next_review_date' => ['nullable', 'date', 'after:start_date', 'before:end_date'],
-        ]);
+        $validated            = $request->validated();
+        $validated['user_id'] = request()->user()->id;
+        $validated['status']  = 'New';
 
-        $attributes['user_id'] = request()->user()->id;
-        $attributes['status']  = 'New';
-
-        Objective::create($attributes);
+        Objective::create($validated);
 
         return redirect('/objective');
     }
@@ -57,16 +52,10 @@ class ObjectiveController extends Controller
         ]);
     }
 
-    public function update(Objective $objective)
+    public function update(ObjectiveRequest $request, Objective $objective)
     {
-        $attributes = request()->validate([
-            'description'      => ['required', 'min:2', 'max:255'],
-            'start_date'       => ['required', 'date'],
-            'end_date'         => ['required', 'date', 'after:start_date'],
-            'next_review_date' => ['nullable', 'date', 'after:start_date', 'before:end_date'],
-        ]);
-
-        $objective->update($attributes);
+        $validated = $request->validated();
+        $objective->update($validated);
 
         return redirect('/objective');
     }

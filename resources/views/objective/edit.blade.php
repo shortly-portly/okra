@@ -9,7 +9,7 @@
         <x-date-input name="end_date" :value="$objective->end_date"></x-date-input>
         <x-date-input name="next_review_date" :value="$objective->next_review_date" optional></x-date-input>
         <div class="flex justify-between">
-          <x-submit-button>Create Objective</x-submit-button>
+          <x-submit-button>Update Objective</x-submit-button>
           <x-cancel-button to="/objective">Cancel</x-cancel-button>
         </div>
       </form>

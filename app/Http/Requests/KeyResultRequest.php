@@ -28,6 +28,7 @@ class KeyResultRequest extends FormRequest
         $beforeObjectiveEnd  = 'before:' . $this->objective->end_date;
 
         return [
+
             'description' => ['required', 'min:2', 'max:255'],
             'start_date'  => ['required', 'date', $afterObjectiveStart],
             'end_date'    => ['required', 'date', 'after:start_date', $beforeObjectiveEnd],

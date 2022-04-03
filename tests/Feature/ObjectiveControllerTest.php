@@ -18,10 +18,8 @@ class ObjectiveControllerTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    public function test_objective_controller_index()
+    public function test_can_list_objective()
     {
-//        $user = User::factory()->create();
-
         $response = $this->actingAs($this->user)
             ->get('/objective');
 
@@ -29,7 +27,7 @@ class ObjectiveControllerTest extends TestCase
         $response->assertSee('Objective List');
     }
 
-    public function test_objective_controller_show()
+    public function test_can_paginate_objective()
     {
         $user = User::factory()
             ->has(Objective::factory(12))
@@ -54,6 +52,27 @@ class ObjectiveControllerTest extends TestCase
         ]);
 
         $response->assertRedirectContains('objective');
+    }
+
+    public function test_can_update_an_objective()
+    {
+
+        $user = User::factory()
+            ->has(Objective::factory())
+            ->create();
+
+        // $response = $this->actingAs($user)
+        //     ->put('/objective/' . $user->objectives[0]->id, [
+        //         'description' => 'Updated description',
+        //     ]);
+
+        $response = $this->put_objective($user->objectives[0], [
+            'description' => 'Updated description',
+        ]);
+
+        $this->assertDatabaseHas('objectives', [
+            'description' => 'Updated description',
+        ]);
     }
 
     public function test_description_is_mandatory()
@@ -215,5 +234,18 @@ class ObjectiveControllerTest extends TestCase
 
         return $this->actingAs($this->user)
             ->post('/objective', $attributes);
+    }
+
+    protected function put_objective(Objective $objective, $attributes = [])
+    {
+        $attributes = array_merge([
+            'description'      => $objective->description,
+            'start_date'       => $objective->start_date,
+            'end_date'         => $objective->end_date,
+            'next_review_date' => $objective->next_review_date],
+            $attributes);
+
+        return $this->actingAs($this->user)
+            ->put('/objective/' . $objective->id, $attributes);
     }
 }
