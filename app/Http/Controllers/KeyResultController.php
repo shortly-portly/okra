@@ -24,11 +24,12 @@ class KeyResultController extends Controller
 
     public function store(KeyResultRequest $request, Objective $objective)
     {
-        $validated                 = $request->validated();
+        $validated = $request->validated();
         $validated['objective_id'] = $objective->id;
-        $validated['status']       = 'New';
+        $validated['status'] = 'New';
 
         KeyResult::create($validated);
+        
 
         return redirect()->route('objective', [$objective]);
     }

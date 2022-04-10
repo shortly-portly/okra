@@ -11,11 +11,7 @@ class ObjectiveController extends Controller
 
     public function index(Request $request)
     {
-        $objectives = $request
-            ->user()
-            ->objectives()
-            ->orderBy('created_at', 'DESC')
-            ->paginate(10);
+        $objectives = $request->user()->objectives()->orderBy('created_at', 'DESC')->paginate(10);
 
         return view('objective.index', [
             'objectives' => $objectives,
@@ -36,6 +32,7 @@ class ObjectiveController extends Controller
 
     public function store(ObjectiveRequest $request)
     {
+
         $validated            = $request->validated();
         $validated['user_id'] = request()->user()->id;
         $validated['status']  = 'New';
